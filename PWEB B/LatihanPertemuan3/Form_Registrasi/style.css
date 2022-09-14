@@ -1,0 +1,48 @@
+body {
+    background-color: #1a0f5d;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0;
+    margin: 0;
+}
+ 
+.container {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 460px;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.header {
+    background-color: #ebe300;
+    border-bottom: 1px solid #6c86ad;
+    padding: 20px 40px;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 800;
+    color: #343a40;
+    text-align: center;
+}
+  
+img {
+    display:block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+.form{
+    position: relative;
+}
+
+form{
+    margin-top: 25px;
+    height: 500px;
+}
