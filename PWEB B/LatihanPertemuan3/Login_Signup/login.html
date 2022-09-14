@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+  </head>
+  <body align="center">
+    <h3>LOGIN</h3>
+    <form onsubmit="submit_form()">
+      <h4>USERNAME</h4>
+      <input id="username" type="email" placeholder="Enter your email id" required />
+      <h4>PASSWORD</h4>
+      <input id="password" type="password" placeholder="Enter your password" required /> <br /><br />
+      <input type="submit" value="Login" />
+      <input type="button" value="Signup" onclick="create()" />
+    </form>
+
+    <script type="text/javascript">
+      function submit_form() {
+        alert("Login successfully");
+      }
+
+      function create() {
+        window.location = "signup.html";
+      }
+    </script>
+  </body>
+</html>
