@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran - 5025201025</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+ 
+<body>
+    <div class="container">
+        <div class="header">
+            <h1> Formulir Pendaftaran </h1>
+            <h2> Pekan Olahraga dan Seni Guru TKA/TPA </h2>
+            <h2> Tahun 2020 </h2>
+        </div>
+    
+        <form name="form" onsubmit="return validate()">
+            <div class="form-group">
+                <label>NAMA PESERTA</label>
+                <input type="text" name="nama" placeholder="Masukan Nama Peserta" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>TEMPAT TANGGAL LAHIR</label>
+                <input type="text" name="ttl" placeholder="Masukan Tempat Tanggal Lahir" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>UTUSAN UNIT TKA/TPA</label>
+                <input type="text" name="unit" placeholder="Masukan Unit TKA/TPA" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>KELURAHAN/DESA</label>
+                <input type="text" name="desa" placeholder="Masukan Kelurahan/Desa" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>NOMOR TELEPON</label>
+                <input type="text" name="telp" placeholder="Masukan Nomor Telepon" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>JENIS LOMBA</label>
+                <select name="jenis-lomba" class="form-control" >
+                        <option value="">--Pilih Jenis Lomba--</option>
+                        <option value="1">1. Tarik Tambang (4 Perempuan + 1 Laki-laki = 5 Orang)</option>
+                        <option value="2">2. Lari Estafet (4 Perempuan)</option>
+                        <option value="3">3. Gobak Sodor (4 Perempuan)</option>
+                        <option value="4">4. Tartil (1 Orang Perwakilan TKA/TPA)</option>
+                        <option value="5">5. Ceramah (1 Orang Perwakilan TKA/TPA)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>UPLOAD FORMULIR</label>
+                <input type="file" name="file" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+</body>
+ 
+</html>
