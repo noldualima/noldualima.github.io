@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+            rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+            crossorigin="anonymous" 
+        />
+
+        <title>5025201025 - JQuery "Validasi Form Input"</title>
+        <style type="text/css">
+            .labelfrm {
+                display: block;
+                font-size: medium;
+                margin-top: 5px;
+            }
+            .error {
+                font-size: small;
+                color: rgba(255, 10, 10, 0.9);
+            }
+        </style>
+
+        <script type="text/javascript" src="jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="jquery/jquery.validate.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#frm-mhs").validate({
+                rules: {
+                    nrp: {
+                    digits: true,
+                    minlength: 10,
+                    maxlength: 14,
+                    },
+                    tgl: {
+                    indonesianDate: true,
+                    },
+                    umur: {
+                    digits: true,
+                    range: [0, 100],
+                    },
+                    email: {
+                    email: true,
+                    },
+                    situs: {
+                    url: true,
+                    },
+                    pass2: {
+                    equalTo: "#pass1",
+                    },
+                },
+                messages: {
+                    nrp: {
+                    required: "NRP harus diisi",
+                    minlength: "NRP minimal harus terdiri dari 10 digit",
+                    maxlength: "NRP maksimal harus terdiri dari 14 digit",
+                    },
+                    nama: {
+                    required: "Nama harus diisi",
+                    },
+                    alamat: {
+                    required: "Alamat harus diisi",
+                    },
+                    tgl: {
+                    required: "Tanggal lahir harus diisi",
+                    },
+                    umur: {
+                    required: "Umur harus diisi",
+                    },
+                    email: {
+                    required: "Alamat email harus diisi",
+                    email: "Format alamat email tidak valid",
+                    },
+                    situs: {
+                    required: "Alamat situs harus diisi",
+                    },
+                    pass1: {
+                    required: "Password harus diisi",
+                    },
+                    pass2: {
+                    required: "Konfirmasi password harus diisi",
+                    equalTo: "Password tidak sama",
+                    },
+                },
+                });
+            });
+
+            $.validator.addMethod(
+                "indonesianDate",
+                function (value, element) {
+                return value.match(/^\d\d?\/\d\d?\/\d\d\d\d$/);
+                },
+                "Masukkan sesuai format DD/MM/YYYY"
+            );
+        </script>
+    </head>
+
+    <body>
+        <h1 class="text-primary text-center my-3">INPUT DATA MAHASISWA</h1>
+        <div class="d-flex justify-content-center mt-4">
+            <form action="proses.php" method="post" id="frm-mhs">
+                <label for="nrp" class="labelfrm">NRP: </label>
+                <input type="text" name="nrp" id="nrp" maxlength="14" class="required" size="50" placeholder="1234567890" />
+
+                <label for="nama" class="labelfrm">NAMA: </label>
+                <input type="text" name="nama" id="nama" size="50" class="required" placeholder="Masukkan nama" />
+
+                <label for="alamat" class="labelfrm">ALAMAT: </label>
+                <textarea name="alamat" id="alamat" cols="50" rows="4" class="required" placeholder="Masukkan alamat"></textarea>
+
+                <label for="tgl" class="labelfrm">TANGGAL LAHIR: </label>
+                <input type="text" name="tgl" id="tgl" maxlength="10" size="50" class="required" placeholder="DD/MM/YYYY" />
+
+                <label for="umur" class="labelfrm">UMUR: </label>
+                <input type="text" name="umur" id="umur" maxlength="3" size="50" class="required" placeholder="Rentang umur 0-100" />
+
+                <label for="email" class="labelfrm">ALAMAT EMAIL: </label>
+                <input type="text" name="email" id="email" size="50" class="required" placeholder="email@gmail.com" />
+
+                <label for="situs" class="labelfrm">ALAMAT SITUS: </label>
+                <input type="text" name="situs" id="situs" size="50" class="required" placeholder="http://situs.com" />
+
+                <label for="pass1" class="labelfrm">PASSWORD: </label>
+                <input type="password" name="pass1" id="pass1" size="50" class="required" placeholder="Masukkan password" />
+
+                <label for="pass2" class="labelfrm">KONFIRMASI PASSWORD: </label>
+                <input type="password" name="pass2" id="pass2" size="50" class="required" placeholder="Masukkan password kembali" />
+
+                <label for="submit" class="labelfrm">&nbsp;</label>
+                <div class="d-flex align-items-center justify-content-center">
+                <button type="submit" class="btn btn-info">Submit</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
